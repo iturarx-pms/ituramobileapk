@@ -1,0 +1,39 @@
+name: Deploy Pages
+
+# Builds and publishes the static download site from the repo root. Triggers
+# on every push to main (the site itself is version-agnostic — it always
+# links to /releases/latest/download/itura-release.apk — but redeploying on
+# every push keeps the Pages build provenance up to date) and can be run
+# manually from the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

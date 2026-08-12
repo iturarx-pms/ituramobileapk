@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itura — Your pharmacy, in your pocket.</title>
+  <meta name="description" content="Download the Itura app for Android — manage prescriptions, refills, and pharmacy delivery from your phone." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">IT</span>
+        <span class="brand-name">itura</span>
+      </a>
+      <a class="nav-cta" href="https://github.com/iturarx-pms/ituramobileapk/releases/latest/download/itura-release.apk">Download</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      ANDROID · FREE
+    </div>
+
+    <h1 class="headline">
+      Your pharmacy,
+      <span class="accent">in your pocket.</span>
+    </h1>
+
+    <p class="subtext">
+      Order refills, track deliveries, and manage every prescription from one app.
+      Itura connects you straight to your pharmacy — no phone tag, no waiting rooms.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/iturarx-pms/ituramobileapk/releases/latest/download/itura-release.apk">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download for Android
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/iturarx-pms/ituramobileapk/releases">All releases</a>
+    </div>
+
+    <p class="fineprint">Android 8.0+ &middot; Free &middot; Nothing extra to install</p>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Itura. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
